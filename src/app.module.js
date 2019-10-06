@@ -7,24 +7,39 @@ app.constant('constantes', {
         urlApi: 'http://localhost:50515/api'
     },
     TIPOS_VEICULO_FIPE: [
-        { codigo: "Carros", nome: 'Carro' },
-        { codigo: "Motos", nome: 'Moto' },
-        { codigo: "Caminhoes", nome: 'Caminhão' }
+        { codigo: 'Carros', nome: 'Carro' },
+        { codigo: 'Motos', nome: 'Moto' },
+        { codigo: 'Caminhoes', nome: 'Caminhão' }
     ]
 });
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise("/checkFipe");
+    $urlRouterProvider.otherwise('/buscarVeiculo');
 
     $stateProvider
-        .state("checkFipe", {
-            url: "/checkFipe",
+        .state('buscarVeiculo', {
+            url: '/buscarVeiculo',
             views: {
                 'app': {
                     templateUrl: 'busca-veiculo.html',
                     controller: 'BuscaVeiculoController'
                 }
             }
-
+        })
+        .state('consultasVeiculos', {
+            url: '/consultasVeiculos',
+            views: {
+                'app': {
+                    template: '<div> CONSULTAS VEÍCULOS</div>'
+                }
+            }
+        })
+        .state('veiculosMaisProcurados', {
+            url: '/veiculosMaisProcurados',
+            views: {
+                'app': {
+                    template: '<div> VEÍCULOS MAIS PROCURADOS</div>'
+                }
+            }
         })
 });
