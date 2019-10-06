@@ -1,3 +1,48 @@
-<div class="container" ng-controller="BuscaVeiculoController">
-  Busca de Veículo
+<h4>Buscar Veículo</h4>
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputTipo">Tipo de Veículo</label>
+      <select id="inputTipo" class="form-control" ng-model="buscaVeiculo.tipoVeiculo" ng-change="carregarMarcas()">
+        <option ng-value="null">Selecione o tipo</option>
+        <option ng-repeat="tipoVeiculo in buscaVeiculo.tiposVeiculosFipe" value="{{tipoVeiculo.codigo}}">
+          {{tipoVeiculo.nome}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputMarca">Marca</label>
+      <select id="inputMarca" class="form-control" ng-disabled="!buscaVeiculo.tipoVeiculo && !buscaVeiculo.marcas"
+        ng-model="buscaVeiculo.codigoMarca" ng-change="carregarModelos()">
+        <option ng-value="null">Selecione a marca</option>
+        <option ng-repeat="marca in buscaVeiculo.marcas" value="{{marca.codigo}}">
+          {{marca.nome}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputModelo">Modelo</label>
+      <select id="inputModelo" class="form-control" ng-disabled="!buscaVeiculo.codigoMarca && !buscaVeiculo.modelos"
+        ng-model="buscaVeiculo.codigoModelo" ng-change="carregarAnos()">
+        <option ng-value="null">Selecione o modelo</option>
+        <option ng-repeat="modelo in buscaVeiculo.modelos" value="{{modelo.codigo}}">
+          {{modelo.nome}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputAno">Ano</label>
+      <select id="inputAno" class="form-control" ng-disabled="!buscaVeiculo.codigoModelo && !buscaVeiculo.anos"
+        ng-model="buscaVeiculo.codigoAno" ng-change="buscarVeiculo()">
+        <option ng-value="null">Selecione o ano</option>
+        <option ng-repeat="ano in buscaVeiculo.anos" value="{{ano.codigo}}">
+          {{ano.nome}}
+        </option>
+      </select>
+    </div>
+</form>
+
+<div>
+  <h4>Dados do Veículo Buscado</h4>
+  <p ng-if="buscaVeiculo.veiculo">{{buscaVeiculo.veiculo | json}}</p>
 </div>
