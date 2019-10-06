@@ -1,58 +1,61 @@
-/* Inicio Header */
-.header-area {
-  position: fixed;
-  width: 100%;
-  height: 120px;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 0 30px;
-}
-
-.navbar-brand {
+body {
   color: #fff;
-  font-size: 24px;
-  font-weight: 700;
-  margin-right: 70px;
+  background: url(../img/cidade.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  box-shadow:inset 0 0 0 2000px rgba(14, 2, 35, 0.5);
 }
 
-.navbar-expand-lg .navbar-nav .nav-link {
-  padding-right: 15px;
-  padding-left: 15px;
-  color: #fff;
-  font-size: 15px;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus,
+.navbar-nav .nav-item:hover .nav-link,
+.navbar-nav .nav-item:focus .nav-link,
 .navbar-nav .nav-item.active .nav-link {
   color: #7643ea;
   cursor: pointer;
 }
 /* Fim Header */
 
-/* Inicio Section */
+h2 {
 
-section {
-  background-image: url(../img/cidade.jpg);
-  width: 100%;
-  height: 100vh;
+  font-size: 60px;
+}
+
+h4 {
+  margin-bottom: 0;
+  padding-left: 5px;
+}
+
+.tab-content {
+  margin-top: 90px;
   position: relative;
   z-index: 1;
-  background-position: center center;
-  background-size: cover;
 }
 
-section:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(14, 2, 35, 0.5);
-  z-index: -1;
+.tab-content .tab-pane {
+  padding: 35px;
+  background-color: rgba(67, 25, 161, 0.65);
 }
 
-/* Fim Section */
+.tab-content .tab-pane h6 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.tab-content .tab-pane form select
+{
+  height: 52px;
+  border-radius: 0;
+  padding: 0 10px;
+  color: #72728c;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  margin-right: 10px;
+}
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: #bfc0c1;
+  cursor: not-allowed;
+}
