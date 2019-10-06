@@ -7,21 +7,47 @@
 
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Check Fipe</title>
 </head>
 
 <body>
-    <h1>Check Fipe</h1>
-    <div ui-view="app"></div>
+    <header class="header-area">
+        <nav class="h-100 navbar navbar-expand-lg">
+            <span class="navbar-brand">CHECK FIPE</span>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <span class="nav-link" ui-sref="buscarVeiculo">Buscar Veículo</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link" ui-sref="consultasVeiculos">Consultas Realizadas</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link" ui-sref="veiculosMaisProcurados">Veículos Mais Procurados</span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="container-fluid h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <div ui-view="app"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../node_modules/angular/angular.min.js"></script>
     <script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="../node_modules/angular-material/angular-material.min.js"></script>
-    <script src="app.module.js"></script>  
-    <script src="js/fipe.service.js"></script>  
-    <script src="js/busca-veiculo.controller.js"></script>    
+    <script src="app.module.js"></script>
+    <script src="js/fipe.service.js"></script>
+    <script src="js/busca-veiculo.controller.js"></script>
 </body>
 </html>

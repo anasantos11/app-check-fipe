@@ -1,0 +1,58 @@
+/* Inicio Header */
+.header-area {
+  position: fixed;
+  width: 100%;
+  height: 120px;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0 30px;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 70px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-item.active .nav-link {
+  color: #7643ea;
+  cursor: pointer;
+}
+/* Fim Header */
+
+/* Inicio Section */
+
+section {
+  background-image: url(../img/cidade.jpg);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  background-position: center center;
+  background-size: cover;
+}
+
+section:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(14, 2, 35, 0.5);
+  z-index: -1;
+}
+
+/* Fim Section */
