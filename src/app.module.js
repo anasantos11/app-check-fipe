@@ -30,7 +30,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/consultasVeiculos',
             views: {
                 'app': {
-                    template: '<div> CONSULTAS VEÍCULOS</div>'
+                    templateUrl: 'template/consultas-veiculos.html',
+                    controller: 'ConsultasVeiculosController'
                 }
             }
         })
@@ -38,7 +39,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/veiculosMaisProcurados',
             views: {
                 'app': {
-                    template: '<div> VEÍCULOS MAIS PROCURADOS</div>'
+                    templateUrl: 'template/veiculos-mais-procurados.html',
+                    controller: 'VeiculosMaisProcuradosController'
                 }
             }
         })

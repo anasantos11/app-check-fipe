@@ -1,0 +1,33 @@
+<h2 class="text-center">Veículos Mais Procurados</h2>
+<h4 class="text-center">Visualize os veículos mais procurados na tabela Fipe nessa aplicação</h4>
+<div class="tab-content" ng-init="carregarVeiculosMaisProcurados()">
+    <div class="tab-pane fade show active bg-light">
+        <h4 class="text-left mb-3 text-purple">Veículos</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nº Consultas</th>
+                    <th scope="col">Código Fipe</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Ano</th>
+                    <th scope="col">Combustível</th>
+                    <th scope="col">Preço Médio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="veiculo in veiculosMaisProcurados">
+                    <td scope="row">{{$index + 1}}</td>
+                    <td scope="row">{{veiculo.numeroDeConsultas}}</td>
+                    <td scope="row">{{veiculo.codigoFipe}}</td>
+                    <td scope="row">{{veiculo.descricaoMarca}}</td>
+                    <td scope="row">{{veiculo.descricaoModelo}}</td>
+                    <td scope="row">{{veiculo.anoModelo}}</td>
+                    <td scope="row">{{veiculo.descricaoCombustivel}}</td>
+                    <td scope="row">{{veiculo.preco}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

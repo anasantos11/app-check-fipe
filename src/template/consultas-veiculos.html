@@ -1,0 +1,35 @@
+<h2 class="text-center">Consultas Realizadas</h2>
+<h4 class="text-center">Visualize todas as consultas realizadas na tabela Fipe nessa aplicação</h4>
+<div class="tab-content" ng-init="carregarVeiculosConsultados()">
+    <div class="tab-pane fade show active bg-light">
+        <h4 class="text-left mb-3 text-purple">Consultas</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Data Consulta</th>
+                    <th scope="col">Código Fipe</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Ano</th>
+                    <th scope="col">Combustível</th>
+                    <th scope="col">Preço Médio</th>
+                    <th scope="col">Nº Consultas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="consulta in consultasVeiculos">
+                    <td scope="row">{{$index + 1}}</td>
+                    <td scope="row">{{consulta.dataConsultaVeiculo | date:'dd/MM/yyyy HH:mm'}}</td>
+                    <td scope="row">{{consulta.veiculo.codigoFipe}}</td>
+                    <td scope="row">{{consulta.veiculo.descricaoMarca}}</td>
+                    <td scope="row">{{consulta.veiculo.descricaoModelo}}</td>
+                    <td scope="row">{{consulta.veiculo.anoModelo}}</td>
+                    <td scope="row">{{consulta.veiculo.descricaoCombustivel}}</td>
+                    <td scope="row">{{consulta.veiculo.preco}}</td>
+                    <td scope="row">{{consulta.veiculo.numeroDeConsultas}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
