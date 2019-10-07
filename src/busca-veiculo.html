@@ -56,7 +56,7 @@
         <i class="fas fa-fw fa-truck-moving" ng-if="buscaVeiculo.tipoVeiculo == Caminhoes"></i>
         Dados da Tabela Fipe
       </h4>
-      <div class="col-6">
+      <div class="col-12 col-md-6">
         <div>
           <span class="font-weight-bold">Código na Tabela Fipe: </span>
           <span>{{buscaVeiculo.veiculo.codigoFipe}}</span>
@@ -79,7 +79,7 @@
           <span>{{buscaVeiculo.veiculo.descricaoCombustivel}}</span>
         </div>
       </div>
-      <div class="col-6 text-pink" ng-if="buscaVeiculo.veiculo">
+      <div class="col-12 col-md-6 text-pink" ng-if="buscaVeiculo.veiculo">
         <h4 class="p-0">
           Preço Médio: {{buscaVeiculo.veiculo.preco}}
         </h4>
