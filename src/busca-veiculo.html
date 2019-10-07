@@ -1,20 +1,21 @@
-<h2>Buscar Veículo</h2>
-<h4>Descubra o valor do veículo na tabela Fipe</h4>
+<h2 class="text-center">Buscar Veículo</h2>
+<h4 class="text-center">Descubra o valor do veículo na tabela Fipe</h4>
 <div class="tab-content">
-  <div class="tab-pane fade show active" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
-    <h6>Qual veículo você está procurando?</h6>
+  <div class="tab-pane fade show active bg-purple">
+    <h4 class="text-left  mb-3">Qual veículo você está procurando?</h4>
     <form>
       <div class="form-row">
         <div class="form-group col-md-2">
           <label for="inputTipo">Tipo de Veículo</label>
           <select id="inputTipo" class="form-control" ng-model="buscaVeiculo.tipoVeiculo" ng-change="carregarMarcas()">
             <option ng-value="null">Selecione o tipo</option>
-            <option ng-repeat="tipoVeiculo in buscaVeiculo.tiposVeiculosFipe" value="{{tipoVeiculo.codigo}}" title="{{tipoVeiculo.nome}}">
+            <option ng-repeat="tipoVeiculo in buscaVeiculo.tiposVeiculosFipe" value="{{tipoVeiculo.codigo}}"
+              title="{{tipoVeiculo.nome}}">
               {{tipoVeiculo.nome}}
             </option>
           </select>
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-3">
           <label for="inputMarca">Marca</label>
           <select id="inputMarca" class="form-control" ng-disabled="!buscaVeiculo.tipoVeiculo && !buscaVeiculo.marcas"
             ng-model="buscaVeiculo.codigoMarca" ng-change="carregarModelos()">
@@ -24,7 +25,7 @@
             </option>
           </select>
         </div>
-        <div class="form-group col-md-5">
+        <div class="form-group col-md-4">
           <label for="inputModelo">Modelo</label>
           <select id="inputModelo" class="form-control" ng-disabled="!buscaVeiculo.codigoMarca && !buscaVeiculo.modelos"
             ng-model="buscaVeiculo.codigoModelo" ng-change="carregarAnos()">
@@ -44,11 +45,46 @@
             </option>
           </select>
         </div>
+      </div>
     </form>
   </div>
-</div>
-
-<div>
-  <h4>Dados do Veículo Buscado</h4>
-  <p ng-if="buscaVeiculo.veiculo">{{buscaVeiculo.veiculo | json}}</p>
+  <div class="tab-pane fade show active bg-light" ng-if="buscaVeiculo.veiculo">
+    <div class="row">
+      <h4 class="col-12 text-purple mb-3">
+        <i class="fas fa-fw fa-car" ng-if="buscaVeiculo.tipoVeiculo == Carros"></i>
+        <i class="fas fa-fw fa-motorcycle" ng-if="buscaVeiculo.tipoVeiculo == Motos"></i>
+        <i class="fas fa-fw fa-truck-moving" ng-if="buscaVeiculo.tipoVeiculo == Caminhoes"></i>
+        Dados da Tabela Fipe
+      </h4>
+      <div class="col-6">
+        <div>
+          <span class="font-weight-bold">Código na Tabela Fipe: </span>
+          <span>{{buscaVeiculo.veiculo.codigoFipe}}</span>
+        </div>
+        <div>
+          <i class="fas fa-fw fa-car" ng-if="buscaVeiculo.tipoVeiculo == 'Carros'"></i>
+          <i class="fas fa-fw fa-motorcycle" ng-if="buscaVeiculo.tipoVeiculo == 'Motos'"></i>
+          <i class="fas fa-fw fa-truck-moving" ng-if="buscaVeiculo.tipoVeiculo == 'Caminhoes'"></i>
+          <span class="font-weight-bold">Marca e Modelo: </span>
+          <span>{{buscaVeiculo.veiculo.descricaoMarca}} {{buscaVeiculo.veiculo.descricaoModelo}}</span>
+        </div>
+        <div>
+          <i class="fas fa-fw fa-calendar"></i>
+          <span class="font-weight-bold">Ano do Modelo: </span>
+          <span>{{buscaVeiculo.veiculo.anoModelo}}</span>
+        </div>
+        <div>
+          <i class="fa fa-fw fa-gas-pump"></i>
+          <span class="font-weight-bold">Combustível: </span>
+          <span>{{buscaVeiculo.veiculo.descricaoCombustivel}}</span>
+        </div>
+      </div>
+      <div class="col-6 text-pink" ng-if="buscaVeiculo.veiculo">
+        <h4 class="p-0">
+          Preço Médio: {{buscaVeiculo.veiculo.preco}}
+        </h4>
+        <div>Em {{buscaVeiculo.veiculo.mesReferencia}}</div>
+      </div>
+    </div>
+  </div>
 </div>

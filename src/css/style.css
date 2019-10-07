@@ -31,16 +31,16 @@ h4 {
   position: relative;
   z-index: 1;
 }
-
 .tab-content .tab-pane {
   padding: 35px;
-  background-color: rgba(67, 25, 161, 0.65);
 }
 
-.tab-content .tab-pane h6 {
+.tab-content .tab-pane.bg-purple {
   color: #fff;
-  font-size: 18px;
-  margin-bottom: 25px;
+  background-color: rgba(67, 25, 161, 0.65);
+}
+.tab-content .tab-pane.bg-light {
+  color: #212529;
 }
 
 .tab-content .tab-pane form select
@@ -49,13 +49,23 @@ h4 {
   border-radius: 0;
   padding: 0 10px;
   color: #72728c;
-  font-size: 12px;
   font-weight: 600;
   border: none;
   margin-right: 10px;
 }
 
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem #8e0083;
+}
 .form-control:disabled, .form-control[readonly] {
   background-color: #bfc0c1;
   cursor: not-allowed;
+}
+
+.text-purple {
+  color: #6f42c1;
+}
+
+.text-pink {
+  color:#e83e8c;
 }
